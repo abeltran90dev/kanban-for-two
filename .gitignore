@@ -1,0 +1,65 @@
+# =========================================
+# .NET
+# =========================================
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+*.user
+*.suo
+*.userprefs
+*.rsuser
+*.pubxml.user
+.vs/
+TestResults/
+[Dd]ebug/
+[Rr]elease/
+*.nupkg
+coverage*.xml
+coverage*.json
+*.coverage
+*.trx
+
+# =========================================
+# Angular / Node
+# =========================================
+node_modules/
+dist/
+.angular/
+out-tsc/
+coverage/
+npm-debug.log*
+yarn-error.log*
+.npm/
+.sass-cache/
+
+# =========================================
+# Playwright
+# =========================================
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# =========================================
+# Environment & secrets
+# =========================================
+.env
+.env.*
+!.env.example
+
+# =========================================
+# IDEs
+# =========================================
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+
+# =========================================
+# OS
+# =========================================
+.DS_Store
+Thumbs.db
+desktop.ini
