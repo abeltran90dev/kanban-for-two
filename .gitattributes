@@ -1,0 +1,20 @@
+# Normalize all text files to LF, both in the repo and in the working tree
+* text=auto eol=lf
+
+# Windows batch scripts require CRLF to run correctly
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+#Binary files: never modify line endings or attempt diffs
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.webp  binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.eot   binary
+*.pdf   binary
+*.zip   binary
