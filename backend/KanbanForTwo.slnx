@@ -5,4 +5,7 @@
     <Project Path="src/KanbanForTwo.Domain/KanbanForTwo.Domain.csproj" />
     <Project Path="src/KanbanForTwo.Infrastructure/KanbanForTwo.Infrastructure.csproj" />
   </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/KanbanForTwo.ArchitectureTests/KanbanForTwo.ArchitectureTests.csproj" />
+  </Folder>
 </Solution>
