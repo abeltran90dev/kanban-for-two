@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\KanbanForTwo.Application\KanbanForTwo.Application.csproj" />
+  </ItemGroup>
+
+</Project>
