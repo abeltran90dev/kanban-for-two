@@ -1,0 +1,51 @@
+name: Backend CI
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "backend/**"
+      - ".editorconfig"
+      - ".github/workflows/backend-ci.yml"
+  push:
+    branches: [main]
+    paths:
+      - "backend/**"
+      - ".editorconfig"
+      - ".github/workflows/backend-ci.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    name: Build and test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          global-json-file: backend/global.json
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Check formatting
+        run: dotnet format --verify-no-changes --no-restore
+
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test --configuration Release --no-build
