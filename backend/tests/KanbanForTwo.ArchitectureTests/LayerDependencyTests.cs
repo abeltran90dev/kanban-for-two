@@ -62,12 +62,6 @@ public sealed class LayerDependencyTests
         AssertSuccessful(result);
     }
 
-    [Fact]
-    public void Ci_ShouldBlockMerge_WhenTestFails()
-    {
-        Assert.Fail("Intentional failure to verify that CI block the merge.");
-    }
-
     private static void AssertSuccessful(ArchTestResult result)
     {
         var fallingTypes = string.Join(", ", result.FailingTypeNames ?? []);
