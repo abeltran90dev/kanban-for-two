@@ -23,7 +23,6 @@ public sealed class LayerDependencyTests
             .GetResult();
 
         AssertSuccessful(result);
-
     }
 
     [Fact]
@@ -64,10 +63,7 @@ public sealed class LayerDependencyTests
 
     private static void AssertSuccessful(ArchTestResult result)
     {
-        var fallingTypes = string.Join(", ", result.FailingTypeNames ?? []);
-        Assert.True(result.IsSuccessful, $"Rule violated by: {fallingTypes}");
+        var failingTypes = string.Join(", ", result.FailingTypeNames ?? []);
+        Assert.True(result.IsSuccessful, $"Rule violated by: {failingTypes}");
     }
-
-
-
 }
